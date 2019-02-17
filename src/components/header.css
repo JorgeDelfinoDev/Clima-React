@@ -1,0 +1,15 @@
+header {
+	background: #303F9F;
+	grid-column: 1 / 2;
+	grid-row: 1 / 2;
+}
+
+.home-link {
+	color: #fff;
+	text-decoration: none;
+}
+
+.home-link:hover {
+	text-decoration: none;
+	color:#BDBDBD;
+}
