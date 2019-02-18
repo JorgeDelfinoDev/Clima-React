@@ -16,7 +16,7 @@ class App extends Component {
 		extendedWeather: [],
 		status: '',
 		loading: false,
-		empty: true
+		empty: false
 	}
 
 	componentDidUpdate () {
@@ -61,7 +61,7 @@ class App extends Component {
 		this.setState({
 			loading: true
 		})
-		await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${location},${country}&appid=${ApiKey}&units=metric`)
+		await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location},${country}&appid=${ApiKey}&units=metric`)
 			.then(resp => resp.json())
 			.then(data => {
 				this.setState({
@@ -88,7 +88,7 @@ class App extends Component {
 				})
 			})
 
-		await fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${location},${country}&appid=${ApiKey}&units=metric`)
+		await fetch(`https://api.openweathermap.org/data/2.5/forecast?q=${location},${country}&appid=${ApiKey}&units=metric`)
 			.then(resp => resp.json())
 			.then(data => {
 				this.setState({

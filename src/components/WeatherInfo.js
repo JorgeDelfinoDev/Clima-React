@@ -3,11 +3,16 @@ import React from 'react';
 import CurrentWeather from './CurrentWeather';
 import ExtendedWeather from './ExtendedWeather';
 
+import EmptyLocation from './EmptyLocation';
+import Spinner from './Spinner';
+import Error404 from './Error404';
+
 import './weather-info.css';
 
 const WeatherInfo = props => {
 
 	const { weather_code } = props.currentWeather;
+	const { status, loading, empty } = props;
 
 	let image;
 	let style;
@@ -60,7 +65,7 @@ const WeatherInfo = props => {
 				break;
 
 			default:
-				image = 'clear-sky';
+				image = '';
 				break;
 		}
 
@@ -69,24 +74,34 @@ const WeatherInfo = props => {
 		}
 	}
 
+	let display;
+
+	if (empty) {
+		display = <EmptyLocation/>
+	} else {
+		if (loading) {
+			display = <Spinner/>
+		} else {
+			if (status === 200) {
+				display = <div className="container-fluid h-100">
+							<div className="row h-100">
+								<CurrentWeather
+									weather={props.currentWeather}
+								/>
+								<ExtendedWeather
+									weather={props.extendedWeather}
+								/>
+							</div>
+						</div>
+			} else if (status === 404) {
+				display = <Error404/>
+			}
+		}
+	}
+
 	return (
 		<div className="weather-info" style={style}>
-			<div className="container-fluid h-100">
-				<div className="row h-100">
-					<CurrentWeather
-						weather={props.currentWeather}
-						status={props.status}
-						loading={props.loading}
-						empty={props.empty}
-					/>
-					<ExtendedWeather
-						weather={props.extendedWeather}
-						status={props.status}
-						loading={props.loading}
-						empty={props.empty}
-					/>
-				</div>
-			</div>
+			{ display }
 		</div>
 	);
 }
