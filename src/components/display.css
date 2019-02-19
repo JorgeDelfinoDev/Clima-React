@@ -2,21 +2,10 @@
 	background: rgba(198,200,202,.7);
 	border: solid 1px rgba(0,0,0,.125);
 	border-radius: .25rem;
+	height: 100%;
 }
 
 .display-extended-weather ul{
 	height: 500px;
 	overflow: auto;
-}
-
-@media (min-width: 0px) {
-	.display-weather {
-		height: 500px;
-	}
-}
-
-@media (min-width: 768px) {
-	.display-weather {
-		height: 100%;
-	}
 }

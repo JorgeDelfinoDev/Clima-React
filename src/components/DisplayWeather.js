@@ -18,7 +18,7 @@ const DisplayWeather = props => {
 	} = props.weather;
 
 	return (
-		<div className="display-weather d-flex flex-column justify-content-around">
+		<div className="display-weather d-flex flex-column justify-content-around py-3">
 			<DisplayWeatherHeader name={name} />
 			<DisplayWeatherIcon icon={weather_icon} />
 			<DisplayWeatherInfo

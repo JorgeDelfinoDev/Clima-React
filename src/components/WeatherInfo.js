@@ -65,7 +65,7 @@ const WeatherInfo = props => {
 				break;
 
 			default:
-				image = '';
+				image = 'bg';
 				break;
 		}
 

@@ -15,9 +15,9 @@ const Form = props => {
 						<div className="input-group-prepend">
 							<div className="input-group-text">AR</div>
 						</div>
-						<input ref={location} type="text" className="form-control" placeholder="City from AR..."/>
+						<input ref={location} type="text" className="form-control" placeholder="Ciudad de Argentina..."/>
 					</div>
-					<button type="submit" className="form-control btn btn-primary col-4">Search</button>
+					<button type="submit" className="form-control btn btn-primary col-4">Buscar</button>
 				</div>
 			</form>
 	);

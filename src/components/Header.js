@@ -8,7 +8,7 @@ const Header = props => {
 			<div className="container-fluid text-center d-flex align-items-center justify-content-center h-100 py-2">
 				<div className="row h-100 w-100">
 					<div className="col-12 col-md-4">
-						<a href="/" className="home-link" style={{fontSize: 32}}>Weather App</a>
+						<a href="/" className="home-link" style={{fontSize: 32}}>Clima App</a>
 					</div>
 					{props.children}
 				</div>

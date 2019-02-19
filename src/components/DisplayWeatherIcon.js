@@ -5,7 +5,7 @@ import WeatherIcon from './WeatherIcon';
 const DisplayWeatherIcon = props => {
 	
 	return (
-		<div className="row">
+		<div className="row py-3 py-md-0">
 			<div className="col text-center">
 				<WeatherIcon
 					icon={props.icon}
