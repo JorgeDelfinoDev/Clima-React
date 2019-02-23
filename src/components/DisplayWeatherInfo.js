@@ -16,6 +16,22 @@ const DisplayWeatherInfo = props => {
 		wind_speed,
 	} = props;
 
+	const renderTempIcon = () => {
+		if (window.innerWidth <= 400) {
+			return <TempIcon
+						temp={temp}
+						size={30}
+						margin={2}
+					/>
+		} else {
+			return <TempIcon
+						temp={temp}
+						size={44}
+						margin={3}
+					/>
+		}
+	}
+
 	return (
 		<CSSTransition
 			in={!props.loading}
@@ -25,11 +41,7 @@ const DisplayWeatherInfo = props => {
 		>
 			<div className="row">
 				<div className="col text-center">
-					<TempIcon
-						temp={temp}
-						size={44}
-						margin={3}
-					/>
+					{ renderTempIcon() }
 				</div>
 				<div className="col text-center">
 					<InfoTable

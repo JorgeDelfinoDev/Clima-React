@@ -32,7 +32,7 @@ const TempIcon = props => {
 	return (
 		<Fragment>
 			<i style={{fontSize: size}} className={`mx-${margin} fas fa-thermometer-${tempColor(temp)}`}></i>
-			<span style={{fontSize: size}}>{ showFixed(temp) }° C </span>
+			<span style={{fontSize: size}}>{ showFixed(temp) }°c </span>
 		</Fragment>
 	);
 }
