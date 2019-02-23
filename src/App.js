@@ -17,7 +17,7 @@ class App extends Component {
 		currentWeather: {},
 		extendedWeather: [],
 		status: '',
-		loading: false,
+		loading: false
 	}
 
 	componentDidUpdate () {
@@ -59,17 +59,19 @@ class App extends Component {
 	}
 
 	getWeather = async ( location, country, ApiKey ) => {
+		
+		this.setState({
+			loading: true
+		})
 
 		if (location === '') {
 			this.setState({
-				empty: true
+				empty: true,
+				loading: false
 			})
 			return;
 		}
 
-		this.setState({
-			loading: true
-		})
 		await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${location},${country}&appid=${ApiKey}&units=metric`)
 			.then(resp => resp.json())
 			.then(data => {

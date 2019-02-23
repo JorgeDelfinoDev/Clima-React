@@ -9,7 +9,7 @@ const Error404 = props => {
 	
 	return (
 		<div
-			className="h-100 d-flex flex-column justify-content-center align-items-center error404"
+			className="h-100 p-4 d-flex flex-column justify-content-center align-items-center error404"
 			style={{background: `url(${require('../assets/images/bg.jpg')})`,
 				backgroundSize: 'cover',
 				backgroundPosition: 'bottom right'}}

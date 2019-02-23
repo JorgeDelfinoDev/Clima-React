@@ -19,6 +19,7 @@ const DisplayWeatherHeader = props => {
 			timeout={500}
 			appear
 			mountOnEnter
+			unmountOnExit
 		>
 			<div className="row">
 				<div className="col-md-12 text-center">

@@ -16,6 +16,7 @@ const DisplayWeatherIcon = props => {
 					classNames='fade-center'
 					timeout={500}
 					mountOnEnter
+					unmountOnExit
 					appear
 				>
 					<WeatherIcon
