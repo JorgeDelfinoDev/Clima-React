@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { CSSTransition } from 'react-transition-group';
+
+import './fade-center.css';
+
 const DisplayWeatherHeader = props => {
 
 	const showDate = () => {
@@ -9,14 +13,22 @@ const DisplayWeatherHeader = props => {
 	}
 
 	return (
-		<div className="row">
-			<div className="col-md-12 text-center">
-				<span className="badge badge-primary">{ showDate() }</span>
+		<CSSTransition
+			in={!props.loading}
+			classNames='fade-center'
+			timeout={500}
+			appear
+			mountOnEnter
+		>
+			<div className="row">
+				<div className="col-md-12 text-center">
+					<span className="badge badge-primary">{ showDate() }</span>
+				</div>
+				<div className="col-md-12 text-center">
+					<h3>{ props.name }</h3>
+				</div>
 			</div>
-			<div className="col-md-12 text-center">
-				<h3>{ props.name }</h3>
-			</div>
-		</div>
+		</CSSTransition>
 	);
 }
  

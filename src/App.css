@@ -11,6 +11,7 @@
 @media (min-width: 0px) {
 	.App {
 		display: block;
+		height: auto;
 	}
 }
 
@@ -18,5 +19,6 @@
 	.App {
 		display: grid;
 		overflow: hidden;
+		height: 100vh;
 	}
 }

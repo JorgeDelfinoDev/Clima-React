@@ -1,5 +1,9 @@
 import React from 'react';
 
+import { CSSTransition } from 'react-transition-group';
+
+import './fade-center.css';
+
 import TempIcon from './TempIcon';
 import WeatherIcon from './WeatherIcon';
 import InfoTable from './InfoTable';
@@ -33,7 +37,15 @@ const WeatherItem = props => {
 	}
 
 	return (
-		<li className="list-group-item weather-item">
+		<CSSTransition
+			in={!props.loading}
+			timeout={500}
+			classNames='fade-center'
+			appear
+			mountOnEnter
+			unmountOnExit
+		>
+			<li className="list-group-item weather-item">
 			<div className="row item-container">
 				<div className="col-12 col-sm-4 d-flex align-items-center justify-content-center justify-content-sm-between my-3 my-sm-0">
 					<WeatherIcon
@@ -59,6 +71,7 @@ const WeatherItem = props => {
 				</div>
 			</div>
 		</li>
+		</CSSTransition>
 	);
 }
  

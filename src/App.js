@@ -4,6 +4,8 @@ import Header from './components/Header';
 import WeatherInfo from './components/WeatherInfo';
 import Form from './components/Form';
 
+import Spinner from './components/Spinner';
+
 import './App.css';
 
 class App extends Component {
@@ -111,10 +113,11 @@ class App extends Component {
 				<WeatherInfo
 					currentWeather={this.state.currentWeather}
 					extendedWeather={this.state.extendedWeather}
-					status={this.state.status}
 					loading={this.state.loading}
+					status={this.state.status}
 					empty={this.state.empty}
 				/>
+				{ this.state.loading && <Spinner/> }
 			</div>
 		);
 	}
