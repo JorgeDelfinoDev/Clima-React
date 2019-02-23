@@ -6,7 +6,7 @@
 .fade-center-appear-active {
     opacity: 1;
 	transform: scaleY(1);	
-    transition: all 500ms ease;
+    transition: all 800ms ease;
 }
 
 .fade-center-enter {
@@ -17,7 +17,7 @@
 .fade-center-enter-active {
     opacity: 1;
     transform: scaleY(1);
-    transition: all 500ms ease;
+    transition: all 800ms ease;
 }
 
 .fade-center-exit {
@@ -28,5 +28,5 @@
 .fade-center-exit-active {
     opacity: 0.01;
     transform: scaleY(0);;
-    transition: all 500ms ease;
+    transition: all 800ms ease;
 }

@@ -76,7 +76,7 @@ const WeatherInfo = props => {
 	let display;
 
 	if (empty) {
-		display = <EmptyLocation/>
+		display = <EmptyLocation loading={loading}/>
 	} else {
 		if (status === 200) {
 			display = <div className="container-fluid h-100">
@@ -92,7 +92,7 @@ const WeatherInfo = props => {
 						</div>
 					</div>
 		} else if (status === 404) {
-			display = <Error404/>
+			display = <Error404 loading={loading}/>
 		}
 	}
 

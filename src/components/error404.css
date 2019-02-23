@@ -1,0 +1,5 @@
+@media (max-width: 767px) {
+	.error404 {
+		min-height: 85vh;
+	}
+}

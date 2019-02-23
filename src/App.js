@@ -18,7 +18,6 @@ class App extends Component {
 		extendedWeather: [],
 		status: '',
 		loading: false,
-		empty: false
 	}
 
 	componentDidUpdate () {
@@ -60,6 +59,14 @@ class App extends Component {
 	}
 
 	getWeather = async ( location, country, ApiKey ) => {
+
+		if (location === '') {
+			this.setState({
+				empty: true
+			})
+			return;
+		}
+
 		this.setState({
 			loading: true
 		})
@@ -86,7 +93,8 @@ class App extends Component {
 				console.log(e);
 				this.setState({
 					status: 404,
-					loading: false
+					loading: false,
+					empty: false
 				})
 			})
 
